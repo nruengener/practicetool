@@ -18,6 +18,10 @@ db.once('open', () => {
   console.log('Connected to MongoDB');
 });
 
+// Import and use entry routes
+const entryRoutes = require('./routes/entries');
+app.use('/entries', entryRoutes);
+
 // Start the server
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
