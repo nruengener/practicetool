@@ -1,0 +1,5 @@
+aider --editor-model "openrouter/deepseek/deepseek-coder" --model "openrouter/openai/o1-preview" --chat-mode architect --edit-format "whole"
+
+aider --o1-preview --architect --editor-model openrouter/deepseek/deepseek-coder --edit-format whole
+
+aider --architect --model openrouter/openai/o1-preview --editor-model openrouter/deepseek/deepseek-coder --edit-format whole
