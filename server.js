@@ -6,7 +6,7 @@ const port = process.env.PORT || 5000;
 app.use(express.json());
 
 // Connect to MongoDB Atlas
-const mongoURI = 'mongodb+srv://<username>:<password>@<cluster-url>/<database-name>?retryWrites=true&w=majority';
+const mongoURI = 'mongodb+srv://your_username:your_password@your_cluster_url.mongodb.net/your_database_name?retryWrites=true&w=majority';
 mongoose.connect(mongoURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
