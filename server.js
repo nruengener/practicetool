@@ -10,12 +10,11 @@ app.use(express.json());
 mongoose.connect('mongodb://localhost:27017/practice-app', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-});
-
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
-db.once('open', () => {
-  console.log('Connected to MongoDB');
+})
+.then(() => console.log('Connected to MongoDB'))
+.catch((error) => {
+  console.error('MongoDB connection error:', error);
+  process.exit(1);
 });
 
 // Import and use entry routes
@@ -31,6 +30,6 @@ const selectedRoutineRoutes = require('./routes/selectedRoutine');
 app.use('/selected-routine', selectedRoutineRoutes);
 
 // Start the server
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+app.listen(port, '0.0.0.0', () => {
+  console.log(`Server is running on http://localhost:${port}`);
 });
