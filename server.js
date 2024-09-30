@@ -22,6 +22,14 @@ db.once('open', () => {
 const entryRoutes = require('./routes/entries');
 app.use('/entries', entryRoutes);
 
+// Import and use routine routes
+const routineRoutes = require('./routes/routines');
+app.use('/routines', routineRoutes);
+
+// Import and use selected routine routes
+const selectedRoutineRoutes = require('./routes/selectedRoutine');
+app.use('/selected-routine', selectedRoutineRoutes);
+
 // Start the server
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
